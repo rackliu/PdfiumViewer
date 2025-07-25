@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
+using System.Windows.Forms;
 
 namespace PdfiumViewer.Demo
 {
@@ -119,6 +120,7 @@ namespace PdfiumViewer.Demo
                 var bytes = File.ReadAllBytes(dialog.FileName);
                 var mem = new MemoryStream(bytes);
                 Renderer.OpenPdf(mem);
+                Renderer.SetZoomMode(PdfViewerZoomMode.FitWidth); // 預設符合寬度
             }
         }
         protected override void OnClosed(EventArgs e)
@@ -368,6 +370,30 @@ namespace PdfiumViewer.Demo
         {
             if (SelectedBookIndex != null)
                 Renderer.GotoPage(SelectedBookIndex.PageIndex);
+        }
+
+        private void PrintPdf(object sender, RoutedEventArgs e)
+        {
+            if (Renderer?.Document == null)
+            {
+                MessageBox.Show(this, "No PDF loaded.", "Print PDF", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            var printDialog = new System.Windows.Controls.PrintDialog();
+            var printDoc = Renderer.Document.CreatePrintDocument();
+            if (printDialog.ShowDialog() == true)
+            {
+                try
+                {
+                    printDoc.PrinterSettings.PrinterName = printDialog.PrintQueue.FullName;
+                    printDoc.Print();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(this, ex.Message, "Print Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
         }
     }
 }

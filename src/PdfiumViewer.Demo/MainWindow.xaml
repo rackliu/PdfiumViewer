@@ -17,16 +17,19 @@
         </Grid.RowDefinitions>
         <ToolBar Grid.Row="0" Background="WhiteSmoke">
             <Button ToolTip="Open Pdf" Click="OpenPdf">
-                <Image Source="Resources/open_pdf.png" />
+                <Image Source="pack://application:,,,/PdfiumViewer.Demo;component/Resources/open_pdf.png" />
             </Button>
             <Button ToolTip="Save as Images" Click="SaveAsImages">
-                <Image Source="Resources/save.png" />
+                <Image Source="pack://application:,,,/PdfiumViewer.Demo;component/Resources/save.png" />
+            </Button>
+            <Button ToolTip="Print PDF" Click="PrintPdf">
+                <Image Source="pack://application:,,,/PdfiumViewer.Demo;component/Resources/print.png" />
             </Button>
             <Button ToolTip="Render all pages" Click="RenderToMemory">
-                <Image Source="Resources/render_all_pages.png" />
+                <Image Source="pack://application:,,,/PdfiumViewer.Demo;component/Resources/render_all_pages.png" />
             </Button>
              <Button Name="BtnShowBookmarks" ToolTip="Show Bookmarks" Click="OnDisplayBookmarks">
-                <Image Source="Resources/show_bookmarks.png" />
+                <Image Source="pack://application:,,,/PdfiumViewer.Demo;component/Resources/show_bookmarks.png" />
             </Button>
             <Popup IsOpen="{Binding ShowBookmarks}" 
                    Placement="Bottom"
@@ -65,10 +68,10 @@
                 </Border>
             </Popup>
             <Button x:Name="BtnSearch" ToolTip="Search term" Click="OpenCloseSearch">
-                <Image Source="Resources/find.png" />
+                <Image Source="pack://application:,,,/PdfiumViewer.Demo;component/Resources/find.png" />
             </Button>
             <ToggleButton x:Name="BtnHand" ToolTip="Hand Tool" Click="EnableHandTools">
-                <Image Source="Resources/hand_cursor.png" />
+                <Image Source="pack://application:,,,/PdfiumViewer.Demo;component/Resources/hand_cursor.png" />
             </ToggleButton>
             <Popup IsOpen="{Binding IsSearchOpen}" 
                    Placement="Bottom"
@@ -102,10 +105,10 @@
                             </TextBlock>
                         </Grid>
                         <Button ToolTip="Previous Page" Click="OnPrevFoundClick" Background="Transparent" BorderThickness="0" Width="30">
-                            <Image Source="Resources/prev.png" />
+                            <Image Source="pack://application:,,,/PdfiumViewer.Demo;component/Resources/prev.png" />
                         </Button>
                         <Button ToolTip="Previous Page" Click="OnNextFoundClick" Background="Transparent" BorderThickness="0" Width="30">
-                            <Image Source="Resources/next.png" />
+                            <Image Source="pack://application:,,,/PdfiumViewer.Demo;component/Resources/next.png" />
                         </Button>
                         <CheckBox Name="MatchCaseCheckBox" VerticalContentAlignment="Center" Margin="5">Match case</CheckBox>
                         <CheckBox Name="WholeWordOnlyCheckBox" VerticalContentAlignment="Center" Margin="5">Match Whole words</CheckBox>
@@ -122,10 +125,10 @@
             </Popup>
             <GridSplitter Background="Gray" Width="1" Margin="5,0"/>
             <Button ToolTip="Is right to left document" Click="ToRtlClick">
-                <Image Source="Resources/rtl.png" />
+                <Image Source="pack://application:,,,/PdfiumViewer.Demo;component/Resources/rtl.png" />
             </Button>
             <Button ToolTip="Is left to right document" Click="ToLtrClick">
-                <Image Source="Resources/ltr.png" />
+                <Image Source="pack://application:,,,/PdfiumViewer.Demo;component/Resources/ltr.png" />
             </Button>
 
             <GridSplitter Background="Gray" Width="1" Margin="5,0"/>
@@ -139,10 +142,10 @@
             <GridSplitter Background="Gray" Width="1" Margin="5,0" />
 
             <Button ToolTip="Previous Page" Click="OnPrevPageClick">
-                <Image Source="Resources/prev.png" />
+                <Image Source="pack://application:,,,/PdfiumViewer.Demo;component/Resources/prev.png" />
             </Button>
             <Button ToolTip="Next Page" Click="OnNextPageClick">
-                <Image Source="Resources/next.png" />
+                <Image Source="pack://application:,,,/PdfiumViewer.Demo;component/Resources/next.png" />
             </Button>
             <TextBox x:Name="TxtPageNo" Width="50" Text="{Binding Page, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" Background="Bisque" >
                 <b:Interaction.Behaviors>
@@ -156,10 +159,10 @@
             <GridSplitter Background="Gray" Width="1" Margin="5,0"/>
 
             <Button ToolTip="Zoom in" Click="OnZoomInClick">
-                <Image Source="Resources/zoom_in.png" />
+                <Image Source="pack://application:,,,/PdfiumViewer.Demo;component/Resources/zoom_in.png" />
             </Button>
             <Button ToolTip="Zoom out" Click="OnZoomOutClick">
-                <Image Source="Resources/zoom_out.png" />
+                <Image Source="pack://application:,,,/PdfiumViewer.Demo;component/Resources/zoom_out.png" />
             </Button>
             <TextBox x:Name="TxtZoomPercent" Width="50" Text="{Binding ZoomPercent, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" Background="Bisque" >
                 <b:Interaction.Behaviors>
@@ -170,43 +173,43 @@
             <GridSplitter Background="Gray" Width="1" Margin="5,0"/>
 
             <Button ToolTip="Single Page Mode" Click="OnSinglePageModeClick">
-                <Image Source="Resources/one_page.png" />
+                <Image Source="pack://application:,,,/PdfiumViewer.Demo;component/Resources/one_page.png" />
             </Button>
             <Button ToolTip="Book Mode" Click="OnBookModeClick">
-                <Image Source="Resources/two_page.png" />
+                <Image Source="pack://application:,,,/PdfiumViewer.Demo;component/Resources/two_page.png" />
             </Button>
             <Button ToolTip="Continuous Pages Mode" Click="OnContinuousModeClick">
-                <Image Source="Resources/continuous_mode.png" />
+                <Image Source="pack://application:,,,/PdfiumViewer.Demo;component/Resources/continuous_mode.png" />
             </Button>
             <GridSplitter Background="Gray" Width="1" Margin="5,0"/>
 
             <Button ToolTip="Fit Width" Click="OnFitWidth">
-                <Image Source="Resources/fit_width.png" />
+                <Image Source="pack://application:,,,/PdfiumViewer.Demo;component/Resources/fit_width.png" />
             </Button>
             <Button ToolTip="Fit Height" Click="OnFitHeight">
-                <Image Source="Resources/fit_height.png" />
+                <Image Source="pack://application:,,,/PdfiumViewer.Demo;component/Resources/fit_height.png" />
             </Button>
             <GridSplitter Background="Gray" Width="1" Margin="5,0"/>
 
             <Button ToolTip="Rotate Left" Click="OnRotateLeftClick">
-                <Image Source="Resources/rotate_left.png" />
+                <Image Source="pack://application:,,,/PdfiumViewer.Demo;component/Resources/rotate_left.png" />
             </Button>
             <Button ToolTip="Rotate Right" Click="OnRotateRightClick">
-                <Image Source="Resources/rotate_right.png" />
+                <Image Source="pack://application:,,,/PdfiumViewer.Demo;component/Resources/rotate_right.png" />
             </Button>
             <GridSplitter Background="Gray" Width="1" Margin="5,0"/>
 
             <Button ToolTip="Transparent Page" Click="OnTransparent">
-                <Image Source="Resources/transparent.png" />
+                <Image Source="pack://application:,,,/PdfiumViewer.Demo;component/Resources/transparent.png" />
             </Button>
             <Button ToolTip="Get Page Text" Click="OnGetText">
-                <Image Source="Resources/show_text.png" />
+                <Image Source="pack://application:,,,/PdfiumViewer.Demo;component/Resources/show_text.png" />
             </Button>
             <Button ToolTip="Pdf Information" Click="OnInfo">
-                <Image Source="Resources/info.png" />
+                <Image Source="pack://application:,,,/PdfiumViewer.Demo;component/Resources/info.png" />
             </Button>
             <Button ToolTip="Close PDF" Click="OnClosePdf">
-                <Image Source="Resources/close_pdf.png" />
+                <Image Source="pack://application:,,,/PdfiumViewer.Demo;component/Resources/close_pdf.png" />
             </Button>
         </ToolBar>
 
